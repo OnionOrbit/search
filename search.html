@@ -1,0 +1,125 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.center{
+display:grid;
+align-items:center;
+justify-items:center;
+}
+.search {
+border: 1px solid grey;
+border-radius: 5px;
+height: 40px;
+width: 60vw;
+padding: 2px 23px 2px 30px;
+outline: 0;
+background-color: #f5f5f5;
+font-size: 15px
+}
+</style>
+<!-----logo icon------>
+<link rel="icon" type="image/png" href="https://yt3.ggpht.com/yti/AJo0G0lgOlDjaZ4En1NbbjvFykS0eEeNuy7HoadXyhpskw=s108-c-k-c0x00ffffff-no-rj"/>
+<!--- End of Logo Icon--->
+  
+<title>CoZen Search</title>
+</head>
+<body class="center" style="height:100%;width:100%">
+<!--- main work --->
+<form class="center" action="/search">
+<!-- Company Name --->
+<h1 style="font-size:3em;"><a style="color:rgb(23,182,129)">CoZen</a><a style="color:rgb(124,183,22)">Search</a></h1>
+<!--- Search input ---->
+<input class="search" name="q" placeholder="Search">
+<input type="hidden" name="page" value="1">
+<input type="submit" style="visibility: hidden">
+</form>
+
+
+<!-----This is popup message----->
+
+ <div class="popup">
+        <div class="popup-content">
+            <h1>X</h1>
+            <h2>Notice</h2>
+            <p>It is on testing so, website is not complete. If you find any bug in there so that you can contract us
+              email: skypatgamming@gmail.com If you want to copy this project you can but you will need to give us credit.
+            </p> <a href=#>Terms</a><br><a href=#>Policy</a>
+        </div>
+    </div>
+
+    <script>
+        const popup = document.querySelector('.popup');
+        const x = document.querySelector('.popup-content h1')
+
+        window.addEventListener('load', () => {
+            popup.classList.add('showPopup');
+            popup.childNodes[1].classList.add('showPopup');
+        })
+        x.addEventListener('click', () => {
+            popup.classList.remove('showPopup');
+            popup.childNodes[1].classList.remove('showPopup');
+        })
+    </script>
+  <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.content {
+    padding: 0 5rem;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    display: grid;
+    place-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-in-out opacity;
+}
+.popup-content {
+    width: clamp(300px, 90vw, 500px);
+    background-color: #fff;
+    padding: clamp(1.5rem, 100vw, 3rem);
+    box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+    border-radius: .5em;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: 200ms ease-in-out opacity,
+                200ms ease-in-out transform;
+    position: relative;
+}
+.popup h1 {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    user-select: none;
+}
+.popup h1:active {
+    transform: scale(.9);
+}
+
+.showPopup {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+  </style>
+<!-----this is the end of popup massage ------>
+</body>
